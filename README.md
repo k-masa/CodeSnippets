@@ -1,10 +1,11 @@
-code_snippet_objc
+CodeSnippets
 =================
 
 objective-c用のsnippet管理リポジトリ
 
-git cloneする場所へ移動
+## 使い方
+以下へ移動
+'cd ~/Library/Developer/Xcode/UserData'
 
-'''
-cd ~/Library/Developer/Xcode/UserData
-'''
+CodeSnippetsフォルダがすでにある場合は削除し
+git cloneする
