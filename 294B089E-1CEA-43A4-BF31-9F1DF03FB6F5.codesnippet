@@ -3,22 +3,19 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>comment_pragma</string>
+	<string>comment_mini_S</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>ClassImplementation</string>
+		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>//====================================================================================================
-#pragma mark - &lt;# mark #&gt; Methods -
-
-/*====================================================================================================*/</string>
+	<string>// ■ ------ &lt;#title#&gt; ------</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>0470474C-CBD8-49CC-8965-61E3F6DB465B</string>
+	<string>294B089E-1CEA-43A4-BF31-9F1DF03FB6F5</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>Comment pragma </string>
+	<string>Comment mini S</string>
 	<key>IDECodeSnippetTitle</key>
 	<string>My Code Snippet</string>
 	<key>IDECodeSnippetUserSnippet</key>

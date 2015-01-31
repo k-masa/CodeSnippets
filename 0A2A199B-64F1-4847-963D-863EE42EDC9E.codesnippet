@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>tableview_basic_s</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>class &lt;# Class Name #&gt;TableView: UITableView, UITableViewDataSource, UITableViewDelegate {
+    
+    var didSelectCell:(()-&gt;Void)?
+    
+    var datas: NSArray = [] {
+        didSet{
+            self.reloadData()
+        }
+    }
+    override func awakeFromNib() {
+        self.delegate   = self
+        self.dataSource = self
+    }
+    
+    override func numberOfSections() -&gt; Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -&gt; Int {
+        return datas.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -&gt; UITableViewCell {
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
+        &lt;# show data #&gt;
+        return cell
+    }
+    
+     func tableView(tableView: UITableView?, didSelectRowAtIndexPath indexPath:NSIndexPath!) {
+        &lt;# select data #&gt;
+    }
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>0A2A199B-64F1-4847-963D-863EE42EDC9E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>tableView_class_basic S</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>S_Tableview</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

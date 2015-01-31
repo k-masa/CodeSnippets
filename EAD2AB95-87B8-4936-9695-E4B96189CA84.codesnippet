@@ -3,22 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>comment_pragma</string>
+	<string>cdispatch_async</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>ClassImplementation</string>
+		<string>CodeExpression</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>//====================================================================================================
-#pragma mark - &lt;# mark #&gt; Methods -
-
-/*====================================================================================================*/</string>
+	<string>dispatch_async(dispatch_get_main_queue()) { () in
+                
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>0470474C-CBD8-49CC-8965-61E3F6DB465B</string>
+	<string>EAD2AB95-87B8-4936-9695-E4B96189CA84</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>Comment pragma </string>
+	<string>dispatch_async S</string>
 	<key>IDECodeSnippetTitle</key>
 	<string>My Code Snippet</string>
 	<key>IDECodeSnippetUserSnippet</key>
