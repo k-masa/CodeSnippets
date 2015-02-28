@@ -9,9 +9,11 @@
 		<string>TopLevel</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>class &lt;# Class Name #&gt;TableView: UITableView, UITableViewDataSource, UITableViewDelegate {
+	<string>import UIKit
+
+class TableView: UITableView, UITableViewDataSource, UITableViewDelegate {
     
-    var didSelectCell:(()-&gt;Void)?
+    var didSelectCell:((anyObject: AnyObject)-&gt;Void)?
     
     var datas: NSArray = [] {
         didSet{
@@ -23,7 +25,7 @@
         self.dataSource = self
     }
     
-    override func numberOfSections() -&gt; Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -&gt; Int {
         return 1
     }
     
@@ -32,16 +34,21 @@
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -&gt; UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
-        &lt;# show data #&gt;
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
         return cell
     }
     
-     func tableView(tableView: UITableView?, didSelectRowAtIndexPath indexPath:NSIndexPath!) {
-        &lt;# select data #&gt;
+    func tableView(tableView: UITableView?, didSelectRowAtIndexPath indexPath:NSIndexPath!) {
+        let any: AnyObject = datas[indexPath.row]
+        if didSelectCell != nil {
+            didSelectCell!(anyObject: any)
+        }
     }
-}
-</string>
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -&gt; CGFloat {
+        return 44.0
+    }
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>0A2A199B-64F1-4847-963D-863EE42EDC9E</string>
 	<key>IDECodeSnippetLanguage</key>
@@ -49,10 +56,10 @@
 	<key>IDECodeSnippetSummary</key>
 	<string>tableView_class_basic S</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>S_Tableview</string>
+	<string>let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>0</integer>
+	<integer>2</integer>
 </dict>
 </plist>

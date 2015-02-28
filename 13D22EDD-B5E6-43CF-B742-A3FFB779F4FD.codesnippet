@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>tableview_all_s</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import UIKit
+
+class TableView: UITableView, UITableViewDataSource, UITableViewDelegate {
+    
+    var didSelectCell:((anyObject: AnyObject)-&gt;Void)?
+    var anyViewTapped:((anyObject: AnyObject)-&gt;Void)?
+    
+    var datas: NSArray = [] {
+        didSet{
+            self.reloadData()
+        }
+    }
+    override func awakeFromNib() {
+        self.delegate   = self
+        self.dataSource = self
+        self.registerNibsForTableViewCell(TableCell.registerNibCells)
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -&gt; Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -&gt; Int {
+        return datas.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -&gt; UITableViewCell {
+        let cell = TableCellFactory.createCell(tableView, indexPath: indexPath)
+        return cell
+    }
+    
+    func tableView(tableView: UITableView?, didSelectRowAtIndexPath indexPath:NSIndexPath!) {
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -&gt; CGFloat {
+        return 44.0
+    }
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -&gt; UIView? {
+            return nil
+    }
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -&gt; CGFloat {
+        return 0.0
+    }
+}
+
+import UIKit
+
+enum TableCell: String {
+    case OtherCell           = "OtherCell"
+
+    static let registerNibCells = [
+        OtherCell.rawValue
+    ]
+    static let useCell = [
+    ]
+}
+
+
+class TableCellFactory: UITableViewCell {
+    
+    var anyViewTapped:((anyObject: AnyObject)-&gt;Void)?
+    
+    var anyObject: AnyObject? = nil {
+        willSet {
+            if newValue != nil {
+                anyObjectWillSet(newValue!)
+            }
+        }
+    }
+    
+    func anyObjectWillSet(newValue: AnyObject) {
+    }
+    
+    class func createCell(tableView: UITableView, indexPath: NSIndexPath) -&gt; TableCellFactory {
+        return TableCellFactory()
+    }
+}
+
+//extension UITableViewCell {
+//    class func getCell&lt;customCellClass&gt;(tableView: UITableView, indexPath: NSIndexPath) -&gt; customCellClass {
+//        return tableView.dequeueReusableCellWithIdentifier(self.getClassName(), forIndexPath: indexPath) as customCellClass
+//    }
+//}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>13D22EDD-B5E6-43CF-B742-A3FFB779F4FD</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>tableview_all_s</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>My Code Snippet</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
